@@ -1,6 +1,6 @@
 import sys
 
-def get_code(a, b):
+def get_bit(a, b):
     if a < 1000:
         if abs(a - b) > 10000:
             return 'C'
@@ -27,7 +27,7 @@ def decode(code_raw):
     codes = [(code[i], code[i + 1]) for i in range(0, len(code) - 1, 2)]
     # print(codes)
 
-    bits = [get_code(*c) for c in codes]
+    bits = [get_bit(*c) for c in codes]
     return "".join(bits)
 
 if __name__ == '__main__':
